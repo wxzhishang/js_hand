@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="nanjing">南京同曦宙光</button>
+    <button id="shenzhen">深圳马可波罗</button> <br>
+    <img src="../CBA官网/image/29131_300.png" alt="深圳马可波罗">
+
+    <script>
+        var nanjing = document.getElementById('nanjing');
+        var shenzhen = document.getElementById('shenzhen');
+        var img = document.querySelector('img');
+
+        nanjing.onclick = function () {
+            img.src = '../CBA官网/image/29133_300.png';
+        }
+        shenzhen.onclick = function () {
+            img.src = '../CBA官网/image/29131_300.png';
+        }
+    </script>
+</body>
+
+</html>

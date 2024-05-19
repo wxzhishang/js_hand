@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "axios": "^1.6.8"
+  },
+  "scripts": {
+    "test": "jest --experimental-vm-modules"
+  },
+  "devDependencies": {
+    "fetch-mock": "^9.11.0",
+    "jest": "^29.7.0"
+  }
+}
