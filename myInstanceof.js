@@ -10,7 +10,8 @@ function myInstanceof(obj, type) {
         return false;
     }
 
-    let objPrototype = obj.__proto__; // 获取对象的原型链起点
+    // let objPrototype = obj.__proto__; // 获取对象的原型链起点
+    let objPrototype = Object.getPrototypeOf(obj);
 
     // 遍历原型链，直至找到匹配的类型或到达原型链底部
     while (true) {
