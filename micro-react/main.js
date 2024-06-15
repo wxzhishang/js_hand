@@ -1,23 +1,17 @@
-// //测试createElement.js
-// import { createElement } from "./react";
-// // 转换后
-// const element2 = createElement("h1", {
-//     title: "world"
-// }, "Hello", createElement("div", null, "!"));
+import { createElement, render, useState } from "./react"
 
-// console.log(element2);
+const nodes = ["节点1", "节点2", "节点3"];
 
 
-//测试render.js
-import { createElement, render } from "./react";
-
-const element = createElement(
-    "h1",
-    {
-        title: "world",
-    },
-    "Hello",
-    createElement("div", null, '!')
+const list = createElement(
+    "ul",
+    null,
+    ...nodes.map((node) => createElement("li", null, node))
 );
-const container = document.getElementById("root");
-render(element, container);
+
+const renderer = () => {
+    const container = document.querySelector("#root");
+    const element = createElement("h1", null, list);
+    render(element, container);
+};
+renderer();
