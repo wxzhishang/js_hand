@@ -182,11 +182,40 @@ const render = (element, container) => {
 };
 
 // 工作循环变量
+/**
+ * 设定下一个要执行的工作单元对象。这个变量用于在React的虚拟DOM算法中，
+ * 指向下一个需要进行渲染或更新的 Fiber 对象。
+ */
 let nextUnitOfWork = null;
+
+/**
+ * 当前正在处理的根 Fiber 对象。在React的渲染过程中，
+ * 这个变量用于跟踪当前正在构建或更新的最顶层组件。
+ */
 let wipRoot = null;
+
+/**
+ * 保存当前渲染或更新完成的根 Fiber 对象。这个变量用于区分
+ * 正在进行的工作和已经完成的工作，以便在渲染完成后能够正确地展示UI。
+ */
 let currentRoot = null;
+
+/**
+ * 用于存储在当前渲染周期中需要被删除的 Fiber 对象列表。
+ * 这个列表在React的垃圾回收机制中起到关键作用，帮助识别并清理不再需要的组件。
+ */
 let deletions = null;
+
+/**
+ * 当前正在处理的 Fiber 对象。在React的虚拟DOM算法中，
+ * 这个变量用于跟踪当前正在构建或更新的组件。
+ */
 let wipFiber = null;
+
+/**
+ * 用于追踪当前操作的 Hook 指针。在React的 Hook 模型中，
+ * 这个变量用于在组件内部管理状态和副作用。
+ */
 let hookIndex = null;
 
 /**
