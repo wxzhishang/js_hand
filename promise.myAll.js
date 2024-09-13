@@ -29,6 +29,9 @@ function fetchDataFromAPI() {
  * Promise.myAll
  */
 Promise.prototype.myAll = function (requestArr) {
+    if (!Array.isArray(requestArr)) {
+        return new TypeError('参数必须是数组')
+    }
     return new Promise((resolve, reject) => {
         let resArr = [];//响应数组
         fulfilledNum = 0;//已经完成（状态变为fulfilled）的promise数量

@@ -1,8 +1,6 @@
 import axios from 'axios'
 
-export const handQueue = (
-    reqs // 请求总数
-) => {
+export const handQueue = (reqs) => {
     reqs = reqs || []
 
 
